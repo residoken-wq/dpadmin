@@ -237,9 +237,14 @@
                 </p>
             </div>
 
-            <div class="right" style="float:right; right:0px">
-                <img style="width:100px;height:30px; float:right"
+            <div class="right" style="float:right; right:0px; text-align: right;">
+                <img style="width:100px;height:30px; display: block; margin-left: auto;"
                      src="data:image/png;base64,{{DNS1D::getBarcodePNG($data['id'], "C39+",3,33,array(1,1,0)) }}"/>
+                <div style="margin-top: 15px; text-align: right;">
+                    @if(count($data->OrderCustomer())>0 && $data->OrderCustomer()[0]['approved'] == '2')
+                        <span style="color: red; font-weight: bold; font-size: 15px; border: 2px solid red; padding: 2px 3px; display: inline-block;">ĐÃ THANH TOÁN</span>
+                    @endif
+                </div>
             </div>
         </header>
         <section>
@@ -400,41 +405,42 @@
                         <table class="tg">
                             <thead>
                             <tr>
-                                <th class="tg-baqh">Phí dịch thuật</th>
-                                <th class="tg-baqh">Công chứng</th>
-                                <th class="tg-baqh">Dấu Công ty</th>
-                                <th class="tg-baqh">Sao y</th>
-                                <th class="tg-baqh">Ngoại vụ</th>
-                                <th class="tg-baqh">Vận chuyển</th>
-                                <th class="tg-baqh">Thành tiền</th>
+                                <th class="tg-baqh" style="font-size: 14px;">Phí dịch thuật</th>
+                                <th class="tg-baqh" style="font-size: 14px;">Công chứng</th>
+                                <th class="tg-baqh" style="font-size: 14px;">Dấu Công ty</th>
+                                <th class="tg-baqh" style="font-size: 14px;">Sao y</th>
+                                <th class="tg-baqh" style="font-size: 14px;">Ngoại vụ</th>
+                                <th class="tg-baqh" style="font-size: 14px;">Vận chuyển</th>
+                                <th class="tg-baqh" style="font-size: 14px;">Thành tiền</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
-                                <td class="tg-baqh">{{App\MrData::toPricePrint($OrderCustomer['phidichthuat'])}}</td>
-                                <td class="tg-baqh">{{App\MrData::toPricePrint($OrderCustomer['congchung'])}}</td>
-                                <td class="tg-baqh">{{App\MrData::toPricePrint($OrderCustomer['daucongty'])}}</td>
-                                <td class="tg-baqh">{{App\MrData::toPricePrint($OrderCustomer['saoy'])}}</td>
-                                <td class="tg-baqh">{{App\MrData::toPricePrint($OrderCustomer['ngoaivu'])}}</td>
-                                <td class="tg-baqh">{{App\MrData::toPricePrint($OrderCustomer['phivanchuyen'])}}</td>
-                                <td class="tg-baqh" style="text-align: right">{{App\MrData::toPricePrint($OrderCustomer['tong']-$OrderCustomer['vat'])}}</td>
+                                <td class="tg-baqh" style="font-size: 14px;">{{App\MrData::toPricePrint($OrderCustomer['phidichthuat'])}}</td>
+                                <td class="tg-baqh" style="font-size: 14px;">{{App\MrData::toPricePrint($OrderCustomer['congchung'])}}</td>
+                                <td class="tg-baqh" style="font-size: 14px;">{{App\MrData::toPricePrint($OrderCustomer['daucongty'])}}</td>
+                                <td class="tg-baqh" style="font-size: 14px;">{{App\MrData::toPricePrint($OrderCustomer['saoy'])}}</td>
+                                <td class="tg-baqh" style="font-size: 14px;">{{App\MrData::toPricePrint($OrderCustomer['ngoaivu'])}}</td>
+                                <td class="tg-baqh" style="font-size: 14px;">{{App\MrData::toPricePrint($OrderCustomer['phivanchuyen'])}}</td>
+                                <td class="tg-baqh" style="text-align: right; font-size: 14px; font-weight: bold">{{App\MrData::toPricePrint($OrderCustomer['tong']-$OrderCustomer['vat'])}}</td>
                             </tr>
                             <tr>
-                                <td class="tg-lqy6" colspan="6" style="padding-right:2px">VAT</td>
-                                <td class="tg-baqh" style="text-align: right">{{App\MrData::toPricePrint($OrderCustomer['vat'])}} </td>
+                                <td class="tg-lqy6" colspan="6" style="padding-right:2px; font-size: 14px;">VAT</td>
+                                <td class="tg-baqh" style="text-align: right; font-size: 14px; font-weight: bold">{{App\MrData::toPricePrint($OrderCustomer['vat'])}} </td>
                             </tr>
                             <tr>
-                                <td class="tg-lqy6" colspan="6" style="padding-right:2px">Tổng tiền thanh toán</td>
-                                <td class="tg-baqh" style="text-align: right">{{App\MrData::toPricePrint($OrderCustomer['tong'])}}</td>
+                                <td class="tg-lqy6" colspan="6" style="padding-right:2px; font-size: 14px;">Tổng tiền thanh toán</td>
+                                <td class="tg-baqh" style="text-align: right; font-size: 14px; font-weight: bold">{{App\MrData::toPricePrint($OrderCustomer['tong'])}}</td>
                             </tr>
                             <tr>
-                                <td class="tg-lqy6" colspan="6" style="padding-right:2px">Tạm ứng</td>
-                                <td class="tg-baqh" style="text-align: right">{{App\MrData::toPricePrint($OrderCustomer['tamung'])}}</td>
+                                <td class="tg-lqy6" colspan="6" style="padding-right:2px; font-size: 14px;">Tạm ứng</td>
+                                <td class="tg-baqh" style="text-align: right; font-size: 14px; font-weight: bold">{{App\MrData::toPricePrint($OrderCustomer['tamung'])}}</td>
                             </tr>
                             <tr>
-                                <td class="tg-lqy6" colspan="6" style="padding-right:2px">Còn lại</td>
-                                <td class="tg-baqh" style="text-align: right">{{App\MrData::toPricePrint($OrderCustomer['conglai'])}}</td>
+                                <td class="tg-lqy6" colspan="6" style="padding-right:2px; font-size: 14px;">Còn lại</td>
+                                <td class="tg-baqh" style="text-align: right; font-size: 14px; font-weight: bold">{{App\MrData::toPricePrint($OrderCustomer['conglai'])}}</td>
                             </tr>
+
                             </tbody>
                         </table>
                     </div>

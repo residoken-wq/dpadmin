@@ -281,7 +281,7 @@
                                                                   @if($OrderCustomer['approved']=='1')
                                                                     Chưa thanh toán
                                                                   @else
-                                                                    Đã nhận đầy đủ 
+                                                                    Đã nhận đủ 
                                                                   @endif
                                                                   
                                                                   </label>
@@ -423,22 +423,7 @@
 
 
            
-                                                              <div class="col-sm-10">
 
-                                                        
-                                                                    <label>
-                                                                
-                                                                  @if($OrderSupplier['approved']=='1')
-                                                                    Chưa thanh toán
-                                                                  @else
-                                                                    Đã nhận đầy đủ 
-                                                                  @endif
-                                                                  
-                                                                  </label>
-                                                                         
-
-
-                                                  </div>      
                                                    
                                                     
 
@@ -450,10 +435,13 @@
                
                             </div>
                       @endif      
-                          <div class="col-sm-10">
-                                                    
-
-                                                    <img style="width:200px" src="data:image/png;base64,{{DNS1D::getBarcodePNG($data['id'], "C39+",3,33,array(1,1,0)) }}" />
+                          <div class="col-sm-10 text-center">
+                                                    <img style="width:200px; display: block; margin: 0 auto;" src="data:image/png;base64,{{DNS1D::getBarcodePNG($data['id'], "C39+",3,33,array(1,1,0)) }}" />
+                                                    <div style="margin-top: 8px;">
+                                                      @if(count($data->OrderCustomer())>0 && $data->OrderCustomer()[0]['approved'] == '2')
+                                                          <span style="color: red; font-weight: bold; font-size: 12.5px; border: 2px solid red; padding: 3px 7px; display: inline-block;">ĐÃ THANH TOÁN (PAID)</span>
+                                                      @endif
+                                                    </div>
                                                   </div>   
                
                             </div>
