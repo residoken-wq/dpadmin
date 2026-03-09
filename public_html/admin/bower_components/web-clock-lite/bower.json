@@ -1,0 +1,22 @@
+{
+  "name": "web-clock-lite",
+  "authors": [
+    "Glenn Vandeuren <vandeurenglenn@gmail.com>"
+  ],
+  "description": "A basic clock (wip)",
+  "main": "web-clock-lite.html",
+  "keywords": [
+    "web-clock",
+    "clock",
+    "time"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,4 @@
+[2025-05-13 08:28:49] local.ERROR: Maximum execution time of 30 seconds exceeded {"userId":4,"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Maximum execution time of 30 seconds exceeded at /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Grammar.php:100)
+[stacktrace]
+#0 {main}
+"} 

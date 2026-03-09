@@ -1,0 +1,9 @@
+     <html><head><title>Slim Application Error</title><style>body{margin:0;padding:30px;font:12px/1.5 Helvetica,Arial,Verdana,sans-serif;}h1{margin:0;font-size:48px;font-weight:normal;line-height:48px;}strong{display:inline-block;width:65px;}</style></head><body><h1>Slim Application Error</h1><p>The application could not run because of the following error:</p><h2>Details</h2><div><strong>Type:</strong> ErrorException</div><div><strong>Code:</strong> 2</div><div><strong>Message:</strong> First parameter must either be an object or the name of an existing class</div><div><strong>File:</strong> /usr/local/cwpsrv/var/services/user_api/v1/app/routes/api.php</div><h2>Trace</h2><pre><div>#0 /usr/local/cwpsrv/var/services/user_api/v1/app/routes/api.php(0): Slim\Slim::handleErrors(2, 'First parameter...', '/usr/local/cwps...', 0, Array)
+<div>#1 /usr/local/cwpsrv/var/services/user_api/v1/Slim/Route.php(0): {closure}()
+<div>#2 /usr/local/cwpsrv/var/services/user_api/v1/Slim/Slim.php(0): Slim\Route->dispatch()
+<div>#3 /usr/local/cwpsrv/var/services/user_api/v1/Slim/Middleware/Flash.php(0): Slim\Slim->call()
+<div>#4 /usr/local/cwpsrv/var/services/user_api/v1/Slim/Middleware/MethodOverride.php(0): Slim\Middleware\Flash->call()
+<div>#5 /usr/local/cwpsrv/var/services/user_api/v1/Slim/Middleware/PrettyExceptions.php(0): Slim\Middleware\MethodOverride->call()
+<div>#6 /usr/local/cwpsrv/var/services/user_api/v1/Slim/Slim.php(0): Slim\Middleware\PrettyExceptions->call()
+<div>#7 /usr/local/cwpsrv/var/services/user_api/v1/index.php(0): Slim\Slim->run()
+<div>#8 {main}</pre></body></html>

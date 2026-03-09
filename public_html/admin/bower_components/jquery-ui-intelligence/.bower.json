@@ -1,0 +1,21 @@
+{
+  "name": "jquery-ui",
+  "main": [
+    "jquery-ui.js"
+  ],
+  "ignore": [],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": ">=1.6"
+  },
+  "homepage": "https://github.com/jnisperuza/jquery-ui-intelligence",
+  "_release": "d8d1c39d87",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d8d1c39d87b6d9e6eac89bd5dd6fb2e7d5740f95"
+  },
+  "_source": "https://github.com/jnisperuza/jquery-ui-intelligence.git",
+  "_target": "*",
+  "_originalSource": "jquery-ui-intelligence"
+}

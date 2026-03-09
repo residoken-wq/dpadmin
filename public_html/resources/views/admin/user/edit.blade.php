@@ -1,0 +1,200 @@
+@extends("admin.admin")
+ @section('content')
+
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"> Trang chủ </li>
+                <li class="breadcrumb-item"><a href="/admin/users/lists" >Danh sách Quản Trị Viên   </a>
+                </li>
+               
+              
+            </ol>
+
+                  @if(!empty(session('success')))
+                      
+
+                         <div id='myMessagerSuccess' class="modal" tabindex="1" role="dialog">
+                                  <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title">Thông Báo:</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                        </button>
+                                      </div>
+                                      <div class="modal-body">
+                                          <p>{!!session('success')!!}</p>
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                                      
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                    @endif   
+         
+           {!!Form::open(['method'=>'post','class'=>'s'])!!}
+        <div class="row container-fluid">
+           
+                   
+                          <div class="col-xs-6 col-sm-6 col-lg-6 ">
+
+                                    <div class="card">
+                                    <div class="card-header">
+                                        <strong>Thông tin đăng nhập: {{$data['name']}}   </strong>
+                                        <small>Form</small>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-10">
+                                                <div class="form-group">
+                                                    <label for="name">Username </label>
+ {!! Form::text('username',@$data['username'],['class'=>"form-control ", "placeholder"=>""  ]) !!}
+    
+                      @if($errors->has("username")) 
+                        <div class="alert alert-danger">* {{$errors->first("username")}}</div>
+                       @endif  
+                                                   
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-10">
+                                                <div class="form-group">
+                                                    <label for="name">Mật khẩu </label>
+ {!! Form::password('password',['class'=>"form-control ", "placeholder"=>""  ]) !!}
+                     @if($errors->has("password")) 
+                        <div class="alert alert-danger">* {{$errors->first("password")}}</div>
+                       @endif  
+                                                    
+                                                   
+                                                </div>
+                                            </div>
+                                             <div class="col-sm-10">
+                                                <div class="form-group">
+                                                    <label for="name">Nhập lại mật khẩu  </label>
+ {!! Form::password('password_confirmation',['class'=>"form-control ", "placeholder"=>""  ]) !!}
+    
+                                                    
+                                                   
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-10">
+                                                <div class="form-group">
+                                                    <label for="name"> Phân Quyền  </label>
+ {!! Form::select('roles', $roles,@$data['roles'],['class'=>"form-control ", "placeholder"=>""  ]) !!}
+    
+                                                       @if($errors->has("roles")) 
+                        <div class="alert alert-danger">* {{$errors->first("roles")}}</div>
+                       @endif  
+                                                    
+                                      
+                                                   
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>    
+                                            
+                                        </div>
+                                    </div>
+               
+                      
+
+                             <div class="col-xs-6 col-sm-6 col-lg-6">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <strong> Thông Tin Cá Nhân Của Nhân Viên   </strong>
+                                                <small>Form</small>
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="row">
+
+
+                                                    <div class="col-sm-10">
+
+                                                        <div class="form-group">
+                                                            <label for="name">Tên nhân viên: </label>
+                {!! Form::text('name',@$data['name'],['class'=>'form-control'])!!}
+                                                          
+                                          @if($errors->has("name")) 
+                                        <div class="alert alert-danger">* {{$errors->first("name")}}</div>
+                                       @endif                      
+                                                            
+                                                        </div>
+
+                                                    </div>
+
+                                                     <div class="col-sm-10">
+
+                                                        <div class="form-group">
+                                                            <label for="name"> Số điện thoại : </label>
+                {!! Form::text('phone',@$data['phone'],['class'=>'form-control'])!!}
+                                                          
+                                                             
+                                                            
+                                                        </div>
+
+                                                    </div>
+
+                                                     <div class="col-sm-10">
+
+                                                        <div class="form-group">
+                                                            <label for="name"> Email: </label>
+                {!! Form::email('email',@$data['email'],['class'=>'form-control'])!!}
+                                                          
+                                                             
+                                                            
+                                                        </div>
+
+                                                    </div>
+
+
+                                                     <div class="col-sm-10">
+
+                                                        <div class="form-group">
+                                                            <label for="name"> Ghi chú : </label>
+                {!! Form::textarea('note',@$data['note'],['class'=>'form-control','rows'=>4])!!}
+                                                          
+                                                             
+                                                            
+                                                        </div>
+
+                                                    </div>
+
+                                                    
+
+                                                </div>
+                                               
+                                            </div>
+                                        </div>
+
+               
+                            </div>
+                            
+                             <div class="col-sm-12">
+                                       
+                                            <div class="card-footer">
+                                                <input type='hidden' name='_token' value='{{ csrf_token()}}' />
+                                                <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> LƯU </button>
+                                                
+                                            </div>
+                                        </div>
+
+               
+                            </div>
+                 
+
+             </div>
+               {!!Form::close()!!}
+    @endsection
+      @section("script_js")
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#myMessagerSuccess').modal('show');
+            });
+        </script>
+    @endsection    
+    

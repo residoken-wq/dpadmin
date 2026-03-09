@@ -1,0 +1,183 @@
+[2025-12-10 15:46:58] local.ERROR: Changing columns for table "DT_Order_Customer" requires Doctrine DBAL; install "doctrine/dbal". {"exception":"[object] (RuntimeException(code: 0): Changing columns for table \"DT_Order_Customer\" requires Doctrine DBAL; install \"doctrine/dbal\". at /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/ChangeColumn.php:30)
+[stacktrace]
+#0 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Schema/Grammars/Grammar.php(55): Illuminate\\Database\\Schema\\Grammars\\ChangeColumn::compile(Object(Illuminate\\Database\\Schema\\Grammars\\MySqlGrammar), Object(Illuminate\\Database\\Schema\\Blueprint), Object(Illuminate\\Support\\Fluent), Object(Illuminate\\Database\\MySqlConnection))
+#1 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(123): Illuminate\\Database\\Schema\\Grammars\\Grammar->compileChange(Object(Illuminate\\Database\\Schema\\Blueprint), Object(Illuminate\\Support\\Fluent), Object(Illuminate\\Database\\MySqlConnection))
+#2 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php(96): Illuminate\\Database\\Schema\\Blueprint->toSql(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Schema\\Grammars\\MySqlGrammar))
+#3 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(264): Illuminate\\Database\\Schema\\Blueprint->build(Object(Illuminate\\Database\\MySqlConnection), Object(Illuminate\\Database\\Schema\\Grammars\\MySqlGrammar))
+#4 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Schema/Builder.php(149): Illuminate\\Database\\Schema\\Builder->build(Object(Illuminate\\Database\\Schema\\Blueprint))
+#5 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(237): Illuminate\\Database\\Schema\\Builder->table('DT_Order_Custom...', Object(Closure))
+#6 /home/dpadmin/public_html/database/migrations/2025_12_10_153000_fix_order_customer_null_defaults.php(26): Illuminate\\Support\\Facades\\Facade::__callStatic('table', Array)
+#7 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(360): FixOrderCustomerNullDefaults->up()
+#8 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(367): Illuminate\\Database\\Migrations\\Migrator->Illuminate\\Database\\Migrations\\{closure}()
+#9 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(178): Illuminate\\Database\\Migrations\\Migrator->runMigration(Object(FixOrderCustomerNullDefaults), 'up')
+#10 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(147): Illuminate\\Database\\Migrations\\Migrator->runUp('/home/dpadmin/p...', 3, false)
+#11 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(96): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#12 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(71): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#13 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#14 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#15 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#16 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#17 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(572): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#18 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\\Container\\Container->call(Array)
+#19 /home/dpadmin/public_html/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#20 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#21 /home/dpadmin/public_html/vendor/symfony/console/Application.php(1021): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 /home/dpadmin/public_html/vendor/symfony/console/Application.php(275): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 /home/dpadmin/public_html/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#24 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#25 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#26 /home/dpadmin/public_html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#27 {main}
+"} 
+[2025-12-10 15:48:11] local.ERROR: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY' (SQL: insert into `migrations` (`migration`, `batch`) values (2025_12_10_153000_fix_order_customer_null_defaults, 3)) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY' (SQL: insert into `migrations` (`migration`, `batch`) values (2025_12_10_153000_fix_order_customer_null_defaults, 3)) at /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:664, PDOException(code: 23000): SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY' at /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Connection.php:458)
+[stacktrace]
+#0 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('insert into `mi...', Array, Object(Closure))
+#1 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(459): Illuminate\\Database\\Connection->run('insert into `mi...', Array, Object(Closure))
+#2 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Connection.php(411): Illuminate\\Database\\Connection->statement('insert into `mi...', Array)
+#3 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2611): Illuminate\\Database\\Connection->insert('insert into `mi...', Array)
+#4 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Migrations/DatabaseMigrationRepository.php(107): Illuminate\\Database\\Query\\Builder->insert(Array)
+#5 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(183): Illuminate\\Database\\Migrations\\DatabaseMigrationRepository->log('2025_12_10_1530...', 3)
+#6 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(147): Illuminate\\Database\\Migrations\\Migrator->runUp('/home/dpadmin/p...', 3, false)
+#7 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migrator.php(96): Illuminate\\Database\\Migrations\\Migrator->runPending(Array, Array)
+#8 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateCommand.php(71): Illuminate\\Database\\Migrations\\Migrator->run(Array, Array)
+#9 [internal function]: Illuminate\\Database\\Console\\Migrations\\MigrateCommand->handle()
+#10 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#11 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#12 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#13 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(572): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#14 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\\Container\\Container->call(Array)
+#15 /home/dpadmin/public_html/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#16 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#17 /home/dpadmin/public_html/vendor/symfony/console/Application.php(1021): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 /home/dpadmin/public_html/vendor/symfony/console/Application.php(275): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Database\\Console\\Migrations\\MigrateCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 /home/dpadmin/public_html/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 /home/dpadmin/public_html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#23 {main}
+"} 
+[2025-12-10 15:49:02] local.ERROR: The "--execute" option does not exist. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): The \"--execute\" option does not exist. at /home/dpadmin/public_html/vendor/symfony/console/Input/ArgvInput.php:201)
+[stacktrace]
+#0 /home/dpadmin/public_html/vendor/symfony/console/Input/ArgvInput.php(143): Symfony\\Component\\Console\\Input\\ArgvInput->addLongOption('execute', 'echo 'Max ID: '...')
+#1 /home/dpadmin/public_html/vendor/symfony/console/Input/ArgvInput.php(79): Symfony\\Component\\Console\\Input\\ArgvInput->parseLongOption('--execute=echo ...')
+#2 /home/dpadmin/public_html/vendor/symfony/console/Input/Input.php(55): Symfony\\Component\\Console\\Input\\ArgvInput->parse()
+#3 /home/dpadmin/public_html/vendor/symfony/console/Command/Command.php(214): Symfony\\Component\\Console\\Input\\Input->bind(Object(Symfony\\Component\\Console\\Input\\InputDefinition))
+#4 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#5 /home/dpadmin/public_html/vendor/symfony/console/Application.php(1021): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 /home/dpadmin/public_html/vendor/symfony/console/Application.php(275): Symfony\\Component\\Console\\Application->doRunCommand(Object(Laravel\\Tinker\\Console\\TinkerCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 /home/dpadmin/public_html/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 /home/dpadmin/public_html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 {main}
+"} 
+[2025-12-10 15:49:41] local.ERROR: mkdir(): Permission denied {"exception":"[object] (ErrorException(code: 0): mkdir(): Permission denied at /home/dpadmin/public_html/vendor/psy/psysh/src/Configuration.php:363)
+[stacktrace]
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'mkdir(): Permis...', '/home/dpadmin/p...', 363, Array)
+#1 /home/dpadmin/public_html/vendor/psy/psysh/src/Configuration.php(363): mkdir('/run/user/0/psy...', 448, true)
+#2 /home/dpadmin/public_html/vendor/psy/psysh/src/Shell.php(198): Psy\\Configuration->getRuntimeDir()
+#3 /home/dpadmin/public_html/vendor/symfony/console/Application.php(1286): Psy\\Shell->getDefaultCommands()
+#4 /home/dpadmin/public_html/vendor/symfony/console/Application.php(477): Symfony\\Component\\Console\\Application->init()
+#5 /home/dpadmin/public_html/vendor/psy/psysh/src/Shell.php(142): Symfony\\Component\\Console\\Application->add(Object(Illuminate\\Foundation\\Console\\ClearCompiledCommand))
+#6 /home/dpadmin/public_html/vendor/symfony/console/Application.php(463): Psy\\Shell->add(Object(Illuminate\\Foundation\\Console\\ClearCompiledCommand))
+#7 /home/dpadmin/public_html/vendor/laravel/tinker/src/Console/TinkerCommand.php(54): Symfony\\Component\\Console\\Application->addCommands(Array)
+#8 [internal function]: Laravel\\Tinker\\Console\\TinkerCommand->handle()
+#9 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#10 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#11 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#12 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(572): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#13 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\\Container\\Container->call(Array)
+#14 /home/dpadmin/public_html/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#15 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#16 /home/dpadmin/public_html/vendor/symfony/console/Application.php(1021): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 /home/dpadmin/public_html/vendor/symfony/console/Application.php(275): Symfony\\Component\\Console\\Application->doRunCommand(Object(Laravel\\Tinker\\Console\\TinkerCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 /home/dpadmin/public_html/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 /home/dpadmin/public_html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 {main}
+"} 
+[2025-12-10 16:05:43] local.ERROR: mkdir(): Permission denied {"exception":"[object] (ErrorException(code: 0): mkdir(): Permission denied at /home/dpadmin/public_html/vendor/psy/psysh/src/Configuration.php:363)
+[stacktrace]
+#0 [internal function]: Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'mkdir(): Permis...', '/home/dpadmin/p...', 363, Array)
+#1 /home/dpadmin/public_html/vendor/psy/psysh/src/Configuration.php(363): mkdir('/run/user/0/psy...', 448, true)
+#2 /home/dpadmin/public_html/vendor/psy/psysh/src/Shell.php(198): Psy\\Configuration->getRuntimeDir()
+#3 /home/dpadmin/public_html/vendor/symfony/console/Application.php(1286): Psy\\Shell->getDefaultCommands()
+#4 /home/dpadmin/public_html/vendor/symfony/console/Application.php(477): Symfony\\Component\\Console\\Application->init()
+#5 /home/dpadmin/public_html/vendor/psy/psysh/src/Shell.php(142): Symfony\\Component\\Console\\Application->add(Object(Illuminate\\Foundation\\Console\\ClearCompiledCommand))
+#6 /home/dpadmin/public_html/vendor/symfony/console/Application.php(463): Psy\\Shell->add(Object(Illuminate\\Foundation\\Console\\ClearCompiledCommand))
+#7 /home/dpadmin/public_html/vendor/laravel/tinker/src/Console/TinkerCommand.php(54): Symfony\\Component\\Console\\Application->addCommands(Array)
+#8 [internal function]: Laravel\\Tinker\\Console\\TinkerCommand->handle()
+#9 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(29): call_user_func_array(Array, Array)
+#10 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(87): Illuminate\\Container\\BoundMethod::Illuminate\\Container\\{closure}()
+#11 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php(31): Illuminate\\Container\\BoundMethod::callBoundMethod(Object(Illuminate\\Foundation\\Application), Array, Object(Closure))
+#12 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Container/Container.php(572): Illuminate\\Container\\BoundMethod::call(Object(Illuminate\\Foundation\\Application), Array, Array, NULL)
+#13 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Console/Command.php(183): Illuminate\\Container\\Container->call(Array)
+#14 /home/dpadmin/public_html/vendor/symfony/console/Command/Command.php(255): Illuminate\\Console\\Command->execute(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#15 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Console/Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#16 /home/dpadmin/public_html/vendor/symfony/console/Application.php(1021): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#17 /home/dpadmin/public_html/vendor/symfony/console/Application.php(275): Symfony\\Component\\Console\\Application->doRunCommand(Object(Laravel\\Tinker\\Console\\TinkerCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#18 /home/dpadmin/public_html/vendor/symfony/console/Application.php(149): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#19 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Console/Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#20 /home/dpadmin/public_html/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#21 /home/dpadmin/public_html/artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#22 {main}
+"} 
+[2025-12-10 16:11:28] local.INFO: === loinhuankhachhang START === {"request_params":[],"memory":"11.24MB"} 
+[2025-12-10 16:11:34] local.INFO: === loinhuankhachhang START === {"request_params":[],"memory":"11.24MB"} 
+[2025-12-10 16:13:35] local.INFO: update_report: Found 0 new phieu_thu dates {"time":"127.363s"} 
+[2025-12-10 16:13:51] local.INFO: update_report: Found 0 new phieu_thu dates {"time":"137.319s"} 
+[2025-12-10 16:15:11] local.INFO: update_report: Found 0 new phieu_chi dates {"time":"223.414s"} 
+[2025-12-10 16:15:11] local.INFO: update_report COMPLETED {"total_time":"223.414s"} 
+[2025-12-10 16:15:11] local.INFO: After update_report() {"elapsed":"223.429s"} 
+[2025-12-10 16:15:11] local.INFO: After NULL check {"elapsed":"223.431s"} 
+[2025-12-10 16:15:11] local.INFO: After customer list load {"elapsed":"223.473s"} 
+[2025-12-10 16:15:11] local.INFO: Building main query {"filter":"1","elapsed":"223.474s"} 
+[2025-12-10 16:15:11] local.DEBUG: Filter 1 SQL {"sql":" id > 0  AND my_date IN (SELECT DATE(created_at) FROM DT_Order_Customer WHERE cid_customer = 3) "} 
+[2025-12-10 16:15:11] local.INFO: After main query {"elapsed":"223.613s"} 
+[2025-12-10 16:15:11] local.INFO: === loinhuankhachhang END === {"total_time":"223.614s","memory":"11.85MB"} 
+[2025-12-10 16:15:18] local.INFO: update_report: Found 0 new phieu_chi dates {"time":"224.009s"} 
+[2025-12-10 16:15:18] local.INFO: update_report COMPLETED {"total_time":"224.009s"} 
+[2025-12-10 16:15:18] local.INFO: After update_report() {"elapsed":"224.014s"} 
+[2025-12-10 16:15:18] local.INFO: After NULL check {"elapsed":"224.017s"} 
+[2025-12-10 16:15:18] local.INFO: After customer list load {"elapsed":"224.084s"} 
+[2025-12-10 16:15:18] local.INFO: Building main query {"filter":"1","elapsed":"224.086s"} 
+[2025-12-10 16:15:18] local.DEBUG: Filter 1 SQL {"sql":" id > 0  AND my_date IN (SELECT DATE(created_at) FROM DT_Order_Customer WHERE cid_customer = 3) "} 
+[2025-12-10 16:15:18] local.INFO: After main query {"elapsed":"224.241s"} 
+[2025-12-10 16:15:18] local.INFO: === loinhuankhachhang END === {"total_time":"224.241s","memory":"11.85MB"} 
+[2025-12-10 16:19:33] local.INFO: === loinhuankhachhang START === {"request_params":[],"memory":"11.24MB"} 
+[2025-12-10 16:19:33] local.INFO: update_report: Date comparison {"max_phieu_thu":"2025-12-10 15:03:05","max_phieu_chi":"2025-12-10 10:46:32","max_report":"2025-12-10","time":"0.102s"} 
+[2025-12-10 16:19:33] local.INFO: update_report: No new dates needed {"time":"0.102s"} 
+[2025-12-10 16:19:33] local.INFO: After update_report() {"elapsed":"0.113s"} 
+[2025-12-10 16:19:33] local.INFO: After NULL check {"elapsed":"0.116s"} 
+[2025-12-10 16:19:33] local.INFO: After customer list load {"elapsed":"0.199s"} 
+[2025-12-10 16:19:33] local.INFO: Building main query {"filter":"1","elapsed":"0.201s"} 
+[2025-12-10 16:19:33] local.DEBUG: Filter 1 SQL {"sql":" id > 0  AND my_date IN (SELECT DATE(created_at) FROM DT_Order_Customer WHERE cid_customer = 3) "} 
+[2025-12-10 16:19:33] local.INFO: After main query {"elapsed":"0.342s"} 
+[2025-12-10 16:19:33] local.INFO: === loinhuankhachhang END === {"total_time":"0.342s","memory":"12.04MB"} 
+[2025-12-10 16:19:36] local.INFO: === loinhuankhachhang START === {"request_params":[],"memory":"11.24MB"} 
+[2025-12-10 16:19:36] local.INFO: update_report: SKIPPED (cached) {"last_run":"2025-12-10 16:19:33","minutes_ago":0} 
+[2025-12-10 16:19:36] local.INFO: After update_report() {"elapsed":"0.033s"} 
+[2025-12-10 16:19:36] local.INFO: After NULL check {"elapsed":"0.035s"} 
+[2025-12-10 16:19:36] local.INFO: After customer list load {"elapsed":"0.111s"} 
+[2025-12-10 16:19:36] local.INFO: Building main query {"filter":"1","elapsed":"0.112s"} 
+[2025-12-10 16:19:36] local.DEBUG: Filter 1 SQL {"sql":" id > 0  AND my_date IN (SELECT DATE(created_at) FROM DT_Order_Customer WHERE cid_customer = 3) "} 
+[2025-12-10 16:19:36] local.INFO: After main query {"elapsed":"0.249s"} 
+[2025-12-10 16:19:36] local.INFO: === loinhuankhachhang END === {"total_time":"0.25s","memory":"12.14MB"} 
+[2025-12-10 16:29:05] local.INFO: === loinhuankhachhang START === {"request_params":[],"memory":"11.24MB"} 
+[2025-12-10 16:29:05] local.INFO: update_report: SKIPPED (cached) {"last_run":"2025-12-10 16:19:33","minutes_ago":9} 
+[2025-12-10 16:29:05] local.INFO: After update_report() {"elapsed":"0.016s"} 
+[2025-12-10 16:29:05] local.INFO: After NULL check {"elapsed":"0.019s"} 
+[2025-12-10 16:29:05] local.INFO: After customer list load {"elapsed":"0.086s"} 
+[2025-12-10 16:29:05] local.INFO: Building main query {"filter":"1","elapsed":"0.087s"} 
+[2025-12-10 16:29:05] local.DEBUG: Filter 1 SQL {"sql":" id > 0  AND my_date IN (SELECT DATE(created_at) FROM DT_Order_Customer WHERE cid_customer = 3) "} 
+[2025-12-10 16:29:05] local.INFO: After main query {"elapsed":"0.212s"} 
+[2025-12-10 16:29:05] local.INFO: === loinhuankhachhang END === {"total_time":"0.212s","memory":"12.14MB"} 
+[2025-12-10 16:29:31] local.INFO: === loinhuankhachhang START === {"request_params":{"customer":"15","filter":"2","date_from":"11/01/2025","date_to":"11/30/2025"},"memory":"11.24MB"} 
+[2025-12-10 16:29:31] local.INFO: update_report: SKIPPED (cached) {"last_run":"2025-12-10 16:19:33","minutes_ago":9} 
+[2025-12-10 16:29:31] local.INFO: After update_report() {"elapsed":"0.012s"} 
+[2025-12-10 16:29:31] local.INFO: After NULL check {"elapsed":"0.014s"} 
+[2025-12-10 16:29:31] local.INFO: After customer list load {"elapsed":"0.069s"} 
+[2025-12-10 16:29:31] local.INFO: Building main query {"filter":"2","elapsed":"0.07s"} 
+[2025-12-10 16:29:31] local.INFO: After main query {"elapsed":"0.075s"} 
+[2025-12-10 16:29:31] local.INFO: === loinhuankhachhang END === {"total_time":"0.075s","memory":"12.13MB"} 

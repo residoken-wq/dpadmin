@@ -1,0 +1,38 @@
+{
+  "name": "time-picker",
+  "version": "0.1.5",
+  "description": "",
+  "main": "time-picker.html",
+  "authors": [
+    "Glenn Vandeuren <vandeurenglenn@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "time-picker",
+    "time-selector",
+    "material",
+    "clock",
+    "time"
+  ],
+  "homepage": "https://github.com/vandeurenglenn/time-picker",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "web-clock-lite": "vandeurenglenn/web-clock-lite"
+  },
+  "_release": "0.1.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.5",
+    "commit": "b34a9cd20fa102e028843361196bbfefd45d39c4"
+  },
+  "_source": "https://github.com/vandeurenglenn/time-picker.git",
+  "_target": "^0.1.5",
+  "_originalSource": "time-picker",
+  "_direct": true
+}

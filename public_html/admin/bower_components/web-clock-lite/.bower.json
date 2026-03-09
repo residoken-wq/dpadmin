@@ -1,0 +1,31 @@
+{
+  "name": "web-clock-lite",
+  "authors": [
+    "Glenn Vandeuren <vandeurenglenn@gmail.com>"
+  ],
+  "description": "A basic clock (wip)",
+  "main": "web-clock-lite.html",
+  "keywords": [
+    "web-clock",
+    "clock",
+    "time"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/vandeurenglenn/web-clock-lite",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "52094ec657",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "52094ec657d9c4ae172496f89ed9af6152556c36"
+  },
+  "_source": "https://github.com/vandeurenglenn/web-clock-lite.git",
+  "_target": "*",
+  "_originalSource": "vandeurenglenn/web-clock-lite"
+}
