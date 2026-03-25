@@ -429,16 +429,28 @@
                                 <td class="tg-baqh" style="text-align: right; font-size: 14px; font-weight: bold">{{App\MrData::toPricePrint($OrderCustomer['vat'])}} </td>
                             </tr>
                             <tr>
-                                <td class="tg-lqy6" colspan="6" style="padding-right:2px; font-size: 14px;">Tổng tiền thanh toán</td>
-                                <td class="tg-baqh" style="text-align: right; font-size: 14px; font-weight: bold">{{App\MrData::toPricePrint($OrderCustomer['tong'])}}</td>
-                            </tr>
-                            <tr>
                                 <td class="tg-lqy6" colspan="6" style="padding-right:2px; font-size: 14px;">Tạm ứng</td>
                                 <td class="tg-baqh" style="text-align: right; font-size: 14px; font-weight: bold">{{App\MrData::toPricePrint($OrderCustomer['tamung'])}}</td>
                             </tr>
                             <tr>
+                                <td class="tg-lqy6" colspan="6" style="padding-right:2px; font-size: 14px;">Tổng tiền đã thanh toán</td>
+                                <td class="tg-baqh" style="text-align: right; font-size: 14px; font-weight: bold">
+                                    @if($OrderCustomer['approved'] == '2')
+                                        {{App\MrData::toPricePrint($OrderCustomer['tong'])}}
+                                    @else
+                                        {{App\MrData::toPricePrint($OrderCustomer['tamung'])}}
+                                    @endif
+                                </td>
+                            </tr>
+                            <tr>
                                 <td class="tg-lqy6" colspan="6" style="padding-right:2px; font-size: 14px;">Còn lại</td>
-                                <td class="tg-baqh" style="text-align: right; font-size: 14px; font-weight: bold">{{App\MrData::toPricePrint($OrderCustomer['conglai'])}}</td>
+                                <td class="tg-baqh" style="text-align: right; font-size: 14px; font-weight: bold">
+                                    @if($OrderCustomer['approved'] == '2')
+                                        {{App\MrData::toPricePrint(0)}}
+                                    @else
+                                        {{App\MrData::toPricePrint($OrderCustomer['tong'] - $OrderCustomer['tamung'])}}
+                                    @endif
+                                </td>
                             </tr>
 
                             </tbody>

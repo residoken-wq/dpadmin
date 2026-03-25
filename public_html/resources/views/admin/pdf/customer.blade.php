@@ -231,44 +231,39 @@
                                                     </div>
                                                  
 
-                                                   <div class="col-sm-10">
-
-                                                        <div class="form-group">
-                                                           
-                                                            <label>Tổng cộng :</label>
-                                      <strong style="font-weight: bold">
-                                                            {{App\MrData::toPrice($OrderCustomer['tong'])}}
-                                                          </strong>
-                                                        
-                                                        </div>
-
-                                                    </div>
-
-
                                                     <div class="col-sm-10">
-
                                                         <div class="form-group">
-                                                           
                                                             <label>Tạm ứng :</label>
                                       <strong style="font-weight: bold">
                                                             {{App\MrData::toPrice($OrderCustomer['tamung'])}}
                                                           </strong>
-                                                        
                                                         </div>
-
                                                     </div>  
-            
-                                                  <div class="col-sm-10">
 
+                                                    <div class="col-sm-10">
                                                         <div class="form-group">
-                                                           
+                                                            <label>Tổng tiền đã thanh toán :</label>
+                                      <strong style="font-weight: bold">
+                                                            @if($OrderCustomer['approved'] == '2')
+                                                              {{App\MrData::toPrice($OrderCustomer['tong'])}}
+                                                            @else
+                                                              {{App\MrData::toPrice($OrderCustomer['tamung'])}}
+                                                            @endif
+                                                          </strong>
+                                                        </div>
+                                                    </div>
+
+                                                  <div class="col-sm-10">
+                                                        <div class="form-group">
                                                             <label>Còn lại: </label>
                                       <strong style="font-weight: bold">
-                                                            {{App\MrData::toPrice($OrderCustomer['conglai'])}}
+                                                            @if($OrderCustomer['approved'] == '2')
+                                                              0
+                                                            @else
+                                                              {{App\MrData::toPrice($OrderCustomer['tong'] - $OrderCustomer['tamung'])}}
+                                                            @endif
                                                           </strong>
-                                                        
                                                         </div>
-
                                                     </div>  
 
 
